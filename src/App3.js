@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import $ from 'jquery'
 /*
      class A
      {
@@ -19,7 +20,7 @@ class App3 extends Component{
    componentWillMount() {
        console.log("componentWillMount() Call..")
    }
-
+    // UI 라이브러리
    render() {
        console.log("render() Call...")
        const html=this.props.music.map((m)=>(
@@ -32,7 +33,12 @@ class App3 extends Component{
        ));
        return (
            <div>
-               <table className={"table table-hover"}>
+               <table className={"table"}>
+                   <tbody>
+                   <input type={"text"} id={"keyword"} size={"20"} className={"input-sm"}/>
+                   </tbody>
+               </table>
+               <table className={"table table-hover"} id={"user-table"}>
                    <thead>
                    <tr className={"danger"}>
                        <th>순위</th>
@@ -50,6 +56,12 @@ class App3 extends Component{
    }
    componentDidMount() {
        console.log("componentDidMount()")
+       $('#keyword').keyup(function () {
+           var k = $(this).val();
+           $('#user-table>tbody>tr').hide();
+           var temp = $('#user-table>tbody>tr>td:nth-child(4n+3):contains("'+k+'")')
+           $(temp).parent().show();
+       })
    }
 }
 

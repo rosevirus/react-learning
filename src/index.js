@@ -21,7 +21,12 @@ const music=[{"singer":"iKON","movie":"vecSVX1QYbQ","rank":"1","title":"사랑�
             alert("b="+b);
        }
  */
-ReactDOM.render(<App3 music={music}/>, document.getElementById('root'));
+ReactDOM.render(
+    <div>
+        <App3 music={music}/>
+        <App3 music={music}/>
+    </div>,
+    document.getElementById('root'));
 // App() =>
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
