@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+/*
+      함수형 => 기능 1개
+      클래스형 => 기능이 여러개
+ */
 function App() {
   return (
     <div className="App">
@@ -16,7 +19,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Hello React~~~~~~
         </a>
       </header>
     </div>
